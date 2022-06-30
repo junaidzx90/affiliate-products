@@ -1,0 +1,111 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+ @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+ #gallerydiv .inside {
+    padding: 0 0 0 9px;
+}
+p.addgallerybtn {
+    padding: 9px 0;
+    margin: 0;
+}
+#gallery__items ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+#gallery__items ul li {
+    width: 80px;
+    float: left;
+    border: 1px solid rgb(213, 213, 213);
+    margin: 9px 9px 0 0;
+    background: rgb(247, 247, 247);
+    border-radius: 2px;
+    position: relative;
+    box-sizing: border-box;
+}
+#gallery__items ul li img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#gallery__items ul li:hover span.delete__gallery{
+    visibility: visible;
+}
+span.delete__gallery {
+    position: absolute;
+    top: -10px;
+    font-size: 18px;
+    right: -10px;
+    width: 15px;
+    height: 15px;
+    background: #ddd;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 12px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    border: 2px solid #fff;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+
+
+
+.afflinks ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.afflinks ul li {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #f0f0f1;
+    background: #fdfdfd;
+    position: relative;
+}
+.afflinks ul li .fitem {
+    display: flex;
+    gap: 50px;
+}
+.afflinks ul li .fitem label {
+    width: 135px;
+}
+.afflinks ul li .fitem input[type="url"] {
+    width: 50%;
+}
+.upload__link_logo {
+    height: fit-content;
+}
+.logo_preview {
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+.logo_preview img {
+    width: 100%;
+}
+span.delete_link {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    background: #ddd;
+    text-align: center;
+    line-height: 13px;
+    border-radius: 50%;
+    border: 2px solid red;
+    color: red;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
