@@ -146,6 +146,22 @@ class Affiliate_Products_Admin {
 		}
 	}
 	
+	// Remove Quick edit
+	function remove_quick_edit_products( $actions, $post ) {
+		if(get_post_type( $post ) === 'products'){
+			unset($actions['inline hide-if-no-js']);
+			return $actions;
+		}else{
+			return $actions;
+		}
+	}
+
+	//   Remove edit option from bulk
+	function remove_products_edit_actions( $actions ){
+		unset( $actions['edit'] );
+		return $actions;
+	}
+	
 	// Manage table columns
 	function manage_products_columns($columns) {
 		unset($columns['title']);

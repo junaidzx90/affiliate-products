@@ -158,6 +158,8 @@ class Affiliate_Products {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		$this->loader->add_action( 'init', $plugin_admin, 'affiliate_products_post_type' );
+		$this->loader->add_action( "post_row_actions", $plugin_admin, "remove_quick_edit_products", 99, 2);
+		$this->loader->add_action( "bulk_actions-edit-products", $plugin_admin, "remove_products_edit_actions", 99);
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'products_metaboxes', 99 );
 		$this->loader->add_action( 'save_post_products', $plugin_admin, 'save_post_products_meta', 99 );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'admin_menu_page' );
