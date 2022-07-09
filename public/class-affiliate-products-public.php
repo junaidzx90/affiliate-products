@@ -106,12 +106,12 @@ class Affiliate_Products_Public {
 	function products_templates( $template ) {
 
 		if ( is_singular( 'products' )) {
-			$theme_files = array('affiliate-products-single.php', plugin_dir_path( __FILE__ ).'partials/affiliate-products-single.php');
+			$theme_files = array('fullwidth-product.php', plugin_dir_path( __FILE__ ).'partials/fullwidth-product.php');
 			$exists_in_theme = locate_template($theme_files, false);
 			if ( $exists_in_theme != '' ) {
 				$template = $exists_in_theme;
 			} else {
-				$template = plugin_dir_path( __FILE__ ). 'partials/affiliate-products-single.php';
+				$template = plugin_dir_path( __FILE__ ). 'partials/fullwidth-product.php';
 			}
 		}
 
@@ -120,6 +120,15 @@ class Affiliate_Products_Public {
 		}
 
 		return $template;
+	}
+
+	function the_content_products($content){
+		if ( is_singular( 'products' )) {
+			require_once plugin_dir_path( __FILE__ )."partials/affiliate-products-single.php";
+			return get_product_content();
+		}else{
+			return $content;
+		}
 	}
 
 	function products_view(){

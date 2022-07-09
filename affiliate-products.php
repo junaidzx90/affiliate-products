@@ -16,7 +16,7 @@
  * Plugin Name:       Affiliate Products
  * Plugin URI:        https://www.fiverr.com
  * Description:       Promote affiliate products with this plugin, this plugin allows you to create products and send the visitor to the targeted site.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Developer Junayed
  * Author URI:        https://www.fiverr.com/junaidzx90
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'AFFILIATE_PRODUCTS_VERSION', '1.0.0' );
+define( 'AFFILIATE_PRODUCTS_VERSION', '1.0.1' );
 
 function get_product_ratings($ratings){
 	$output = '';
@@ -103,4 +103,25 @@ function run_affiliate_products() {
 	$plugin->run();
 
 }
-run_affiliate_products();
+
+if(get_option( 'template' ) === 'seomag'){
+	add_action( "wp_head", function(){
+		if(current_user_can( 'administrator' )){
+			?>
+			<style>
+				body.woocommerce-js.is_sticky main {
+					margin-top: 152px;
+				}
+			</style>
+			<?php
+		}
+	} );
+
+	run_affiliate_products();
+}else{
+	add_action('admin_notices', function () {
+		$class = 'notice notice-error';
+		$message = '<b>Affiliate products</b> Please install or activate <a target="_b" href="https://www.creanico.fr/">SEO Mag</a> theme to work perfectly.';
+		printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), $message);
+	});
+}

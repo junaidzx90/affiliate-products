@@ -4,11 +4,6 @@
  */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
-div#product_wrapper {
-    max-width: 1080px;
-    margin: 30px auto;
-}
-
 div#product_wrapper ul.aff_products_items {
     margin: 0;
     padding: 0;
@@ -103,14 +98,20 @@ li.aff_product .product_info a.view_product:hover {
     width: 30%;
 }
 .sideWidget {
-    width: 100%;
+    width: 90%;
     border-radius: 10px;
     box-shadow: 0 20px 150px -62px rgb(0 0 0 / 46%);
     background: #e4f2ff;
     overflow: hidden;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+    margin-left: auto;
+}
+.ap_categories {
+    margin-top: 26px;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 20px 150px -62px rgb(0 0 0 / 46%);
+    overflow: hidden;
+    margin-left: auto;
 }
 .wdhead {
     padding: 10px;
@@ -121,7 +122,7 @@ li.aff_product .product_info a.view_product:hover {
     font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #fff;
+    color: #fff !important;
 }
 .wdlowest_price {
     height: 100px;
@@ -213,6 +214,8 @@ a.affiliate_link {
     width: 40%;
     text-align: left;
     padding: 0 10px 0 0;
+    display: flex;
+    align-items: center;
 }
 .afflinks ul.links .filterbox .afflink > .wdtd:last-child {
     text-align: center;
@@ -239,7 +242,7 @@ a.affiliate_link {
 /* Slider */
 #slider_container {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 .slider_left {
     width: 100%;
@@ -414,9 +417,6 @@ li.zoombtn {
 }
 
 @media (max-width: 1080px) {
-    div#product_wrapper {
-        max-width: 90%;
-    }
     .product_view {
         width: 65%;
     }

@@ -70,7 +70,7 @@ class Affiliate_Products {
 		if ( defined( 'AFFILIATE_PRODUCTS_VERSION' ) ) {
 			$this->version = AFFILIATE_PRODUCTS_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.0.1';
 		}
 		$this->plugin_name = 'affiliate-products';
 
@@ -182,8 +182,9 @@ class Affiliate_Products {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_filter( 'the_content', $plugin_public, 'the_content_products', 99 );
 		// Pages includes
-		$this->loader->add_filter('template_include', $plugin_public, 'products_templates');
+		$this->loader->add_filter('template_include', $plugin_public, 'products_templates', 99);
 
 	}
 

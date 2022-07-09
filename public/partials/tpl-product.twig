@@ -1,0 +1,23 @@
+{#
+    * Model: Full-width
+    * @package SEO Mag
+#}
+{% extends "layout/default.twig" %}
+
+{% block content %}
+    <main class="entry page" id="page-{{ post.ID }}" role="main">
+        <div class="entry-layout">
+            <div class="container">
+                <div class="gridlex-noBottom">
+                    <div class="gcol-12">
+                        {% if post.content %}
+                            <div class="contents">
+                                {{ post.content }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
